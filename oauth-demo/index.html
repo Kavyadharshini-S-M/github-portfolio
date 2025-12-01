@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth 2.0 JS Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>OAuth 2.0 Client-Side Demo</h1>
+        
+        <div id="login-section">
+            <button onclick="signIn()">Sign in with Google</button>
+        </div>
+
+<div id="profile-section" style="display: none;">
+    
+    <div class="profile-header">
+        <img id="profile-pic" src="" alt="Profile Picture">
+        <h2 id="name"></h2> <p id="email"></p>   </div>
+
+    <div class="token-box">
+        <span class="label">Access Token (Truncated):</span>
+        <code id="access-token"></code>
+    </div>
+    
+    <button class="btn-logout" onclick="signOut()">Sign Out</button>
+</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

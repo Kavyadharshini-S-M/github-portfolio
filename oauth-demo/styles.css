@@ -1,0 +1,264 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* GLOBAL RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Vibrant Sunset Gradient Background */
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* CARD CONTAINER */
+.container {
+    background: rgba(255, 255, 255, 0.98);
+    padding: 3rem 2.5rem;
+    border-radius: 25px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    backdrop-filter: blur(15px); /* Enhanced frosted glass effect */
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff9a9e, #fecfef, #ff9a9e);
+    border-radius: 25px 25px 0 0;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* PROFILE HEADER STYLES */
+.profile-header {
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+#profile-pic:hover {
+    transform: scale(1.05);
+}
+
+#name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+#email {
+    font-size: 1rem;
+    color: #718096;
+    margin-top: 0.3rem;
+}
+
+/* BUTTON STYLES */
+button {
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+/* Login Button (Google Blue with Gradient) */
+#login-section button {
+    background: linear-gradient(135deg, #4285F4, #34A853);
+    color: white;
+    box-shadow: 0 6px 12px rgba(66, 133, 244, 0.4);
+}
+
+#login-section button:hover {
+    background: linear-gradient(135deg, #357ae8, #2e7d32);
+    box-shadow: 0 8px 16px rgba(66, 133, 244, 0.5);
+    transform: translateY(-2px);
+}
+
+#login-section button::after {
+    content: '🔐';
+    font-size: 1.2rem;
+}
+
+/* Logout Button (Subtle Gray with Icon) */
+.btn-logout {
+    background: linear-gradient(135deg, #f7fafc, #edf2f7);
+    color: #4a5568;
+    margin-top: 2rem;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-logout:hover {
+    background: linear-gradient(135deg, #edf2f7, #e2e8f0);
+    color: #2d3748;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-logout::after {
+    content: '🚪';
+    font-size: 1.2rem;
+}
+
+/* TOKEN BOX (Code Style) */
+.token-box {
+    text-align: left;
+    background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 2rem;
+    border: 1px solid #444;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.token-box .label {
+    display: block;
+    font-size: 0.8rem;
+    color: #bbb;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.token-box code {
+    display: block;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #76d7c4; /* Matrix Green/Teal */
+    word-break: break-all;
+    max-height: 100px;
+    overflow-y: auto;
+    line-height: 1.4;
+    /* Custom Scrollbar for code box */
+    scrollbar-width: thin;
+    scrollbar-color: #555 #2d2d2d;
+}
+
+.token-box code::-webkit-scrollbar {
+    width: 6px;
+}
+
+.token-box code::-webkit-scrollbar-track {
+    background: #2d2d2d;
+}
+
+.token-box code::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 3px;
+}
+
+.token-box code::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 480px) {
+    .container {
+        padding: 2rem 1.5rem;
+        max-width: 90%;
+        margin: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    #name {
+        font-size: 1.4rem;
+    }
+
+    button {
+        padding: 12px 16px;
+        font-size: 1rem;
+    }
+
+    .token-box {
+        padding: 12px;
+    }
+
+    .token-box code {
+        font-size: 0.75rem;
+        max-height: 60px;
+    }
+}
